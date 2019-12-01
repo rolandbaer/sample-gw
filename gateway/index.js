@@ -2,6 +2,15 @@ const http = require('http');
 const url = require('url');
 const port = 4001;
 
+const arguments = process.argv.slice(2);
+var serverAddress = 'http://127.0.0.1:3001';
+if(arguments.length > 0)
+{
+  serverAddress = 'http://' + arguments[0];
+}
+
+console.log("Server is expected to be running on " + serverAddress);
+
 const server = http.createServer(function(req, res) {
   res.writeHead(200, {
     'Content-Type': 'text/html'
@@ -10,9 +19,9 @@ const server = http.createServer(function(req, res) {
   if(req.url.length > 1) {
     var parsedUrl = url.parse(req.url, true);
     if(parsedUrl.query.text != undefined) {
-      console.log(parsedUrl.query.text);
+      console.log("Request text from client: " + parsedUrl.query.text);
       var textLength = parsedUrl.query.text.length;
-      http.request("http://127.0.0.1:3001/?length=" + textLength, (res) => { console.log(res.statusCode); }).end();
+      http.request(serverAddress + "/?length=" + textLength, (res) => { console.log("Response code from server: " + res.statusCode); }).end();
    res.write('<p>OK</p>');
     }
   } 
