@@ -2,6 +2,8 @@
 Sample Gateway and Server for Edge or IOT Gateway demonstration.
 This Sample does not contain any error handling and is intended to be used only in the defined way.
 
+[![DeepScan grade](https://deepscan.io/api/teams/6348/projects/8332/branches/96658/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=6348&pid=8332&bid=96658)
+
 ## Getting started
 
 ### Prerequisites
