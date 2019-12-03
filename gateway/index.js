@@ -2,11 +2,11 @@ const http = require('http');
 const url = require('url');
 const port = 4001;
 
-const arguments = process.argv.slice(2);
+const args = process.argv.slice(2);
 var serverAddress = 'http://127.0.0.1:3001';
-if(arguments.length > 0)
+if(args.length > 0)
 {
-  serverAddress = 'http://' + arguments[0];
+  serverAddress = 'http://' + args[0];
 }
 
 console.log("Server is expected to be running on " + serverAddress);

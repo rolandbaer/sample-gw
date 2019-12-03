@@ -1,11 +1,11 @@
 const http = require('http');
 const url = require('url');
 
-const arguments = process.argv.slice(2);
+const args = process.argv.slice(2);
 var port = 3001;
-if(arguments.length > 0)
+if(args.length > 0)
 {
-  port = arguments[0];
+  port = args[0];
 }
 
 const server = http.createServer(function(req, res) {
