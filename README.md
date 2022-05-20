@@ -63,3 +63,32 @@ e.g.
 ```
 nodejs index.js 192.168.1.11:1234
 ```
+
+### ESLint ###
+
+> ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code, with the goal of making code more consistent and avoiding bugs.
+
+<https://eslint.org/> | <https://www.npmjs.com/package/eslint>
+
+## Setup ##
+
+Ensure that npm is installed on your system. You can try to run the following command:
+```
+npm --version
+```
+If this command doesn't give the version number but an error message, install npm. On an Ubuntu system you can run:
+```
+sudo apt install npm
+```
+As soon as npm is installed you can use it to install eslint:
+```
+npm install eslint --save-dev
+```
+
+## Run checks ##
+
+You can run the check on both the files with the command:
+```
+./node_modules/.bin/eslint server/index.js gateway/index.js 
+```
+If you have only changed one of the files, you can of course run it only on the changed file.
